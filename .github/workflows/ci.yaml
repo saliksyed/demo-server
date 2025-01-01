@@ -25,7 +25,7 @@ jobs:
       - name: Build and push Docker image
         env:
           ECR_REGISTRY: ${{ steps.login-pf-aws-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.[ECR_REPO] }}
+          ECR_REPOSITORY: ${{ secrets.ROCKWORKS_ECR_REPO }}
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
